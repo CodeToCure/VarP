@@ -471,7 +471,7 @@ def get_norm_pos(var):
   
 
 def main(snv_vcf, indel_vcf, genelist_config, gender_config, ethnicity_config,
-         snps3d_pred_file, prev_patients, nmethod, thres_af = 0.00, sc = 1):
+         prev_patients, nmethod, thres_af = 0.00, sc = 1):
     
     vp = VarPrioritization(genelist_config, gender_config)
     
@@ -527,24 +527,24 @@ if __name__ == '__main__':
     genelist_config = basedir + '/genelist_config_vpaper.tsv'
     gender_config = basedir + '/gender_config.tsv'
     ethnicity_config = basedir + '/4-Hopkins_clinical_panel_SNV_predicted_ethnicity_KK.tsv'
-    snps3d_pred_file = basedir + '/snps3d_pred.tsv'
+    
     
     # Logic that was used in CAGI2015
     # C-1 Present in HGMD or Clinvar and annotated as DM, DP or Pathogenic
     prev_patients = []
-    prev_patients = main(snv_vcf, indel_vcf, genelist_config, gender_config, ethnicity_config, snps3d_pred_file, prev_patients, nmethod=1, thres_af = 0.00, sc = 1)
-    prev_patients = main(snv_vcf, indel_vcf, genelist_config, gender_config, ethnicity_config, snps3d_pred_file, prev_patients, nmethod=1, thres_af = 0.005, sc = 1)
-    prev_patients = main(snv_vcf, indel_vcf, genelist_config, gender_config, ethnicity_config, snps3d_pred_file, prev_patients, nmethod=1, thres_af = 0.01, sc = 1)
+    prev_patients = main(snv_vcf, indel_vcf, genelist_config, gender_config, ethnicity_config, prev_patients, nmethod=1, thres_af = 0.00, sc = 1)
+    prev_patients = main(snv_vcf, indel_vcf, genelist_config, gender_config, ethnicity_config, prev_patients, nmethod=1, thres_af = 0.005, sc = 1)
+    prev_patients = main(snv_vcf, indel_vcf, genelist_config, gender_config, ethnicity_config, prev_patients, nmethod=1, thres_af = 0.01, sc = 1)
     
     # C-2 Predicted Damaging NonSyn, FrameShift/Non-FrameShift, Direct Splicing, Damaging by dbscSNVs, NonSense + C-1
-    prev_patients = main(snv_vcf, indel_vcf, genelist_config, gender_config, ethnicity_config, snps3d_pred_file, prev_patients, nmethod=1, thres_af = 0.00, sc = 2)
-    prev_patients = main(snv_vcf, indel_vcf, genelist_config, gender_config, ethnicity_config, snps3d_pred_file, prev_patients, nmethod=1, thres_af = 0.005, sc = 2)
-    prev_patients = main(snv_vcf, indel_vcf, genelist_config, gender_config, ethnicity_config, snps3d_pred_file, prev_patients, nmethod=1, thres_af = 0.01, sc = 2)
+    prev_patients = main(snv_vcf, indel_vcf, genelist_config, gender_config, ethnicity_config, prev_patients, nmethod=1, thres_af = 0.00, sc = 2)
+    prev_patients = main(snv_vcf, indel_vcf, genelist_config, gender_config, ethnicity_config, prev_patients, nmethod=1, thres_af = 0.005, sc = 2)
+    prev_patients = main(snv_vcf, indel_vcf, genelist_config, gender_config, ethnicity_config, prev_patients, nmethod=1, thres_af = 0.01, sc = 2)
     
     # C-3 Intronic + UTR + C-2 + C-1
-    prev_patients = main(snv_vcf, indel_vcf, genelist_config, gender_config, ethnicity_config, snps3d_pred_file, prev_patients, nmethod=1, thres_af = 0.00, sc = 3)
-    prev_patients = main(snv_vcf, indel_vcf, genelist_config, gender_config, ethnicity_config, snps3d_pred_file, prev_patients, nmethod=1, thres_af = 0.005, sc = 3)
-    prev_patients = main(snv_vcf, indel_vcf, genelist_config, gender_config, ethnicity_config, snps3d_pred_file, prev_patients, nmethod=1, thres_af = 0.01, sc = 3)
+    prev_patients = main(snv_vcf, indel_vcf, genelist_config, gender_config, ethnicity_config, prev_patients, nmethod=1, thres_af = 0.00, sc = 3)
+    prev_patients = main(snv_vcf, indel_vcf, genelist_config, gender_config, ethnicity_config, prev_patients, nmethod=1, thres_af = 0.005, sc = 3)
+    prev_patients = main(snv_vcf, indel_vcf, genelist_config, gender_config, ethnicity_config, prev_patients, nmethod=1, thres_af = 0.01, sc = 3)
     #print prev_patients
     
     
