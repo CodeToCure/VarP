@@ -3,7 +3,7 @@ A tool (written in Python) to predict disease class based on gene panel sequenci
 
 # Dependencies
 * Varant (http://compbio.berkeley.edu/proj/varant/Home.html) - VarP is built on top of Varant tool and therefore users have to install Varant before running VarP.
-* >= Python2.6
+* Python (>=v2.6)
 * Python libraries - numpy, mayplotlib, tabix
 * All the VCF files used should be Tabix indexed.
 
